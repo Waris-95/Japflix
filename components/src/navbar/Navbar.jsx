@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="container">
         <div className="left">
           <img
-            src="/src/images/Japflix-1-22-2024.png"
+            src="/components/src/images/Japflix-1-22-2024.png"
             alt=""
           />
           <span>Homepage</span>
@@ -28,7 +28,7 @@ const Navbar = () => {
           <span>KID</span>
           <Notifications className="icon" />
           <img
-            src="/src/images/Image 2.png"
+            src="/components/src/images/Image 2.png"
             alt=""
           />
           <div className="profile">
