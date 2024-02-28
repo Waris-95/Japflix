@@ -1,79 +1,102 @@
 .featured {
-    height: 90vh;
-    position: relative;
+  // Ensuring the section occupies 90% of the viewport height
+  height: 90vh;
+  position: relative;
   
-    .category {
-      position: absolute;
-      top: 80px;
-      left: 50px;
-      font-size: 30px;
-      font-weight: 500;
+  .category {
+    // Positioning the category label
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    display: flex;
+    align-items: center;
+
+    // Styling the dropdown select
+    select {
+      cursor: pointer;
+      background-color: var(--main-color);
+      border: 1px solid white;
       color: white;
-      display: flex;
-      align-items: center;
-  
-      select {
-        cursor: pointer;
-        background-color: var(--main-color);
-        border: 1px solid white;
-        color: white;
-        margin-left: 20px;
-        padding: 5px;
-      }
+      margin-left: 20px;
+      padding: 5px;
+      // Fancy animation or styling could be added here
     }
-  
+  }
+
+  // Ensuring the image fills the container
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // Add transition for smoother effects
+    transition: all 0.3s ease;
+  }
+
+  .info {
+    // Positioning the information block
+    width: 35%;
+    position: absolute;
+    left: 50px;
+    bottom: 100px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: 400px;
+      // Add border-radius for rounded corners
+      border-radius: 10px;
     }
-  
-    .info {
-      width: 35%;
-      position: absolute;
-      left: 50px;
-      bottom: 100px;
-      color: white;
+
+    .desc {
+      margin: 20px 0px;
+      // Fancy font styling could be added here
+    }
+
+    .buttons {
       display: flex;
-      flex-direction: column;
-  
-      img {
-        width: 400px;
-      }
-  
-      .desc {
-        margin: 20px 0px;
-      }
-  
-      .buttons {
+
+      button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
         display: flex;
-  
-        button {
-          padding: 10px 20px;
-          border: none;
-          border-radius: 5px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-size: 18px;
-          font-weight: 500;
-          margin-right: 10px;
-          cursor: pointer;
-  
-          &.play {
-            background-color: white;
-            color: var(--main-color);
-          }
-  
-          &.more {
-            background-color: gray;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: 500;
+        margin-right: 10px;
+        cursor: pointer;
+        // Add transition for smoother effects
+        transition: all 0.3s ease;
+
+        &.play {
+          background-color: white;
+          color: var(--main-color);
+          // Add hover effect for interactive feel
+          &:hover {
+            background-color: var(--main-color);
             color: white;
           }
-  
-          span {
-            margin-left: 5px;
+        }
+
+        &.more {
+          background-color: gray;
+          color: white;
+          // Add hover effect for interactive feel
+          &:hover {
+            background-color: darkgray;
           }
+        }
+
+        span {
+          margin-left: 5px;
+          // Additional styling for the span
         }
       }
     }
   }
+}
