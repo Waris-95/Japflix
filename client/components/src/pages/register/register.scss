@@ -1,0 +1,104 @@
+.register {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 100%
+    ), url('https://th.bing.com/th/id/OIG2.QjTWfI12NjvI2vKzhkCx?w=270&h=270&c=6&r=0&o=5&dpr=2&pid=ImgGn');
+  font-family: 'Helvetica', sans-serif;
+}
+
+.register .top {
+  .wrapper {
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      height: 45px;
+      filter: brightness(1.2); /* Add a subtle glow effect */
+    }
+
+    .loginButton {
+      background-color: #ff0000; /* A deeper shade of red */
+      border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 8px 20px; /* Increased padding */
+      font-size: 18px; /* Increased font size */
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Smooth color transition */
+    }
+
+    .loginButton:hover {
+      background-color: #e60000; /* Lighter shade on hover */
+    }
+  }
+}
+
+.register .container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+
+  h1 {
+    font-size: 60px; /* Increased font size */
+    margin-bottom: 20px; /* Increased margin */
+  }
+
+  h2 {
+    font-size: 28px; /* Increased font size */
+    margin: 30px 0; /* Increased margin */
+  }
+
+  p {
+    font-size: 20px; /* Increased font size */
+    margin-bottom: 30px; /* Increased margin */
+  }
+
+  .input {
+    width: 60%; /* Increased input width */
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px; /* Increased margin */
+    height: 60px; /* Increased height */
+    border-radius: 8px; /* Increased border radius */
+
+    input {
+      flex: 1; /* Set input to take remaining space */
+      height: 100%;
+      border: none;
+      padding: 0 20px; /* Increased padding */
+      font-size: 18px; /* Increased font size */
+    }
+
+    .registerButton {
+      flex: 1; /* Set button to take remaining space */
+      height: 100%;
+      background-color: #ff0000; /* Red color */
+      border: none;
+      color: white;
+      font-size: 18px; /* Increased font size */
+      font-weight: 700; /* Increased font weight */
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 8px; /* Increased border radius */
+    }
+
+    .registerButton:hover {
+      background-color: #a20000; /* Lighter shade on hover */
+    }
+  }
+}
