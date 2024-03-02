@@ -8,7 +8,10 @@ router.post('/register', async (req, res) => {
     try {
         // console.log('Request body password:', req.body.password);
         // console.log('SECRET_KEY:', process.env.SECRET_KEY);
-        const encryptedPassword = CryptoJS.AES.encrypt(req.body.password, process.env.SECRET_KEY).toString();
+        const encryptedPassword = CryptoJS.AES.encrypt
+        (req.body.password, 
+            process.env.SECRET_KEY)
+            .toString();
         // console.log('Encrypted password:', encryptedPassword);
         const newUser = new User({
             username: req.body.username,
