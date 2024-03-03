@@ -69,6 +69,28 @@ router.get("/", verify, async (req, res)=> {
     }
 });
 
-//GET USER STATS
+//GET USER STATSz
+router.get("/stats", verify, async (req, res) => {
+  const today = new Date();
+  const lastYear = today.setFullYear(today.getFullYear() - 1);
+  try {
+    const data = await User.aggregate([
+      {
+        $project: {
+          month: { $month: "$createdAt" },
+        },
+      },
+      {
+        $group: {
+          _id: "$month",
+          total: { $sum: 1 },
+        },
+      },
+    ])
+    res.status(200).json(data)
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 module.exports = router;
