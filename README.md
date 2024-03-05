@@ -54,7 +54,7 @@ A Japanese clone of Netflix.
 ## To run start the app locally:
 
 ##### 1. Clone this repo from terminal:
-    • run "git clone https://github.com/CodeWhatThouWilt/coffeehouse" in terminal 
+    • run "git clone (https://github.com/Waris-95/Japflix.git)" in terminal 
 
 ##### 2. Install dependencies in both the backend and frontend directories:
     • run "npm install"
