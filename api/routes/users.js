@@ -69,7 +69,7 @@ router.get("/", verify, async (req, res)=> {
     }
 });
 
-//GET USER STATSz
+//GET USER STATS
 router.get("/stats", verify, async (req, res) => {
   const today = new Date();
   const lastYear = today.setFullYear(today.getFullYear() - 1);
