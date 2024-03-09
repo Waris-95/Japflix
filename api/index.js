@@ -5,6 +5,7 @@ const dotenv = require('dotenv');
 
 const authRoutes = require('./routes/auth');
 const userRoutes = require('./routes/users');
+const movieRoutes = require('./routes/movies');
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/movies", movieRoutes);
 
 app.listen(5004, () => {
     console.log('Backend server is running on port 5004!');
