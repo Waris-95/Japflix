@@ -1,3 +1,10 @@
+// Animation for pulsating form container
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .login {
   width: 100vw;
   height: 100vh;
@@ -7,7 +14,6 @@
       rgba(0, 0, 0, 0.9) 100%
     ),
     url("https://th.bing.com/th/id/OIG2.7DRffTVdCELMXV2ducDb?w=270&h=270&c=6&r=0&o=5&dpr=2&pid=ImgGn");
-  // background-size: cover;
   background-position: center;
   position: relative;
   overflow: hidden;
@@ -44,24 +50,29 @@
       height: 300px;
       padding: 30px;
       border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.6);
-      webkit-backdrop-filter: blur(10px);
+      background-color: rgba(0, 0, 0, 0.8); /* Darker background */
       display: flex;
       flex-direction: column;
       justify-content: space-around;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
+      animation: pulse 2s ease-in-out infinite alternate; /* Pulsating animation */
 
       input {
         height: 40px;
         border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
         color: white;
         padding-left: 10px;
         border: none;
         outline: none;
+        transition: background-color 0.3s; /* Smooth transition */
 
         &::placeholder {
           color: rgba(255, 255, 255, 0.5);
+        }
+
+        &:focus {
+          background-color: rgba(255, 255, 255, 0.3); /* Lighter background on focus */
         }
       }
 
@@ -74,7 +85,7 @@
         font-size: 18px;
         font-weight: 500;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: background-color 0.3s; /* Smooth transition */
 
         &:hover {
           background-color: #a60000;

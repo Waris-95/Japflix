@@ -1,42 +1,69 @@
+/* Keyframe animation for fancy background */
+@keyframes slide {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Keyframe animation for login button */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .register {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 100%
-    ), url('https://th.bing.com/th/id/OIG2.QjTWfI12NjvI2vKzhkCx?w=270&h=270&c=6&r=0&o=5&dpr=2&pid=ImgGn');
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.95) 100%
+    ), url('https://th.bing.com/th/id/OIG2.RbQqlaakKMhKe1qZPSzQ?w=270&h=270&c=6&r=0&o=5&dpr=2&pid=ImgGn');
+  // background-size: cover;
+  animation: slide 20s linear infinite alternate; /* Background animation */
   font-family: 'Helvetica', sans-serif;
 }
 
-.register .top {
-  .wrapper {
-    padding: 20px 50px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.register .top .wrapper {
+  padding: 20px 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .logo {
-      height: 45px;
-      filter: brightness(1.2); /* Add a subtle glow effect */
-    }
+.register .top .wrapper .logo {
+  height: 45px;
+  // filter: brightness(1) grayscale(100%); 
+  border-radius: 5px; /* Add border radius for a softer look */
+  padding: 5px; /* Add some padding to create space around the logo */
+}
 
-    .loginButton {
-      background-color: #ff0000; /* A deeper shade of red */
-      border: none;
-      color: white;
-      border-radius: 5px;
-      padding: 8px 20px; /* Increased padding */
-      font-size: 18px; /* Increased font size */
-      font-weight: 500;
-      cursor: pointer;
-      transition: background-color 0.3s ease; /* Smooth color transition */
-    }
 
-    .loginButton:hover {
-      background-color: #e60000; /* Lighter shade on hover */
-    }
-  }
+.register .top .wrapper .loginButton {
+  background-color: #d20000; /* Red color */
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 8px 20px; /* Increased padding */
+  font-size: 18px; /* Increased font size */
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+  position: relative; /* Relative positioning for pseudo-element */
+}
+.register .top .wrapper .loginButton:hover {
+  background-color: #330000; /* Even darker red on hover */
+  animation: none; /* Stop animation on hover */
 }
 
 .register .container {
@@ -49,56 +76,80 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #ffffff; /* White text */
 
   h1 {
-    font-size: 60px; /* Increased font size */
-    margin-bottom: 20px; /* Increased margin */
+    font-size: 60px;
+    margin-bottom: 20px;
+    animation: slideTitle 2s ease-in-out infinite alternate; /* Title animation */
   }
 
   h2 {
-    font-size: 28px; /* Increased font size */
-    margin: 30px 0; /* Increased margin */
+    font-size: 28px;
+    margin: 30px 0;
+    animation: slideSubtitle 2s ease-in-out infinite alternate; /* Subtitle animation */
   }
 
   p {
-    font-size: 20px; /* Increased font size */
-    margin-bottom: 30px; /* Increased margin */
+    font-size: 20px;
+    margin-bottom: 30px;
   }
 
   .input {
-    width: 60%; /* Increased input width */
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+    width: 60%;
+    background-color: rgba(0, 0, 0, 0.5); /* Darker and slightly transparent background */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 30px; /* Increased margin */
-    height: 60px; /* Increased height */
-    border-radius: 8px; /* Increased border radius */
+    margin-top: 30px;
+    height: 60px;
+    border-radius: 8px;
 
     input {
-      flex: 1; /* Set input to take remaining space */
+      flex: 1;
       height: 100%;
       border: none;
-      padding: 0 20px; /* Increased padding */
-      font-size: 18px; /* Increased font size */
+      padding: 0 20px;
+      font-size: 18px;
+      background-color: transparent; /* Transparent input field */
+      color: #ffffff; /* White text */
     }
 
     .registerButton {
-      flex: 1; /* Set button to take remaining space */
+      flex: 1;
       height: 100%;
-      background-color: #ff0000; /* Red color */
+      background-color: #a70000; /* Darker red */
       border: none;
-      color: white;
-      font-size: 18px; /* Increased font size */
-      font-weight: 700; /* Increased font weight */
+      color: #ffffff;
+      font-size: 18px;
+      font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.3s ease;
-      border-radius: 8px; /* Increased border radius */
+      transition: background-color 0.3s ease; /* Smooth transition */
+      border-radius: 8px;
     }
 
     .registerButton:hover {
-      background-color: #a20000; /* Lighter shade on hover */
+      background-color: #330000; /* Even darker red on hover */
     }
+  }
+}
+
+/* Keyframe animation for title */
+@keyframes slideTitle {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Keyframe animation for subtitle */
+@keyframes slideSubtitle {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
