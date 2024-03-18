@@ -10,25 +10,28 @@ const listRoute = require("./routes/lists");
 
 dotenv.config();
 
+// Connect to MongoDB
 mongoose.connect(process.env.MONGO_URL, {
-    // useNewUrlParser: true
-    // useUnifiedTopology: true,
-    // useCreateIndex: true
 }).then(() => {
-    console.log('Connected to database!');
+  console.log('Connected to the database!');
 }).catch(err => {
-    console.log(err);
+  console.error('Error connecting to the database:', err);
+  process.exit(1); // Exit the process if unable to connect to the database
 });
 
+// Middleware
 app.use(express.json());
 
+// Routes
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
-app.listen(5004, () => {
-    console.log('Backend server is running on port 5004!');
+// Start the server
+const PORT = process.env.PORT || 5004; // Use the PORT from environment variable or default to 5004
+app.listen(PORT, () => {
+  console.log(`Backend server is running on port ${PORT}!`);
 });
 
-// module.exports = app;
+module.exports = app; 
