@@ -7,25 +7,22 @@ import axios from "axios";
 
 const Home = ({ type }) => {
   const [lists, setLists] = useState([]);
-  const [genre, setGenre] = useState([]);
+  const [genre, setGenre] = useState(null);
 
   useEffect(() => {
-    const getRandomLists = async () => {
-      try {
-        const url = `lists${type ? "?type=" + type : ""}${
-          genre ? "&genre=" + genre : ""
-        }`
-        
-        console.log(url); // Add this line to log the URL
-
-        const res = await axios.get(url);
-        console.log(res);
-        // setLists(res.data)
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getRandomLists();
+   const getRandomLists =  async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:5173/api/lists${type ? "?type=" + type : ""}${genre ? "&genre=" + genre: ""}`
+      );
+      
+      console.log(res)
+      setLists(res.data);
+    } catch (err) {
+      console.log(err);
+    }
+   };
+   getRandomLists();
   }, [type, genre]);
 
   return (
