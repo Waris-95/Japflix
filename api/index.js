@@ -29,7 +29,7 @@ app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
 // Start the server
-const PORT = process.env.PORT || 5004; // Use the PORT from environment variable or default to 5004
+const PORT = process.env.PORT || 5173; // Use the PORT from environment variable or default to 5004
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}!`);
 });
