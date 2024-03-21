@@ -28,8 +28,6 @@ const Home = ({ type }) => {
             token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTE2NjkwZWY2MTJhNjA5MzkwMGJkNSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMDk5NDY4MSwiZXhwIjoxNzExNDI2NjgxfQ.a3oIb-0zK4rasoubmvRssJvyImdw_53mmZ2jn74uXOQ"
           }
         });
-
-        console.log(res);
         setLists(res.data);
       } catch (err) {
         console.log(err);
@@ -42,9 +40,7 @@ const Home = ({ type }) => {
     <div className="home">
       <Navbar />
       <Featured type={type} />
-      <List />
-      <List />
-      <List />
+      
       <List />
     </div>
   );
