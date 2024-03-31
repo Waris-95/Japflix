@@ -6,7 +6,7 @@ import Login from "./pages/login/Login";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 const App = () => {
-  const user = true;
+  const user = true
   return (
     <Router>
       <Switch>
@@ -20,7 +20,7 @@ const App = () => {
         {user && (
           <>
             <Route path="/movies">
-              <Home type="movie" />
+              <Home type="movies" />
             </Route>
             <Route path="/series">
               <Home type="series" />

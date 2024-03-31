@@ -20,18 +20,23 @@ mongoose.connect(process.env.MONGO_URL, {
   process.exit(1); // Exit the process if unable to connect to the database
 });
 
+app.use((req, res, next) => {
+  console.log(req.url);
+  next();
+});
+
 // Middleware
 app.use(express.json());
 app.use(cors());
 
 // Routes
-app.use("/api/auth", authRoute);
+app.use("/api/auth", authRoute); 
 app.use("/api/users", userRoute);
 app.use("/api/movies", movieRoute);
 app.use("/api/lists", listRoute);
 
 // Start the server
-const PORT = process.env.PORT || 5173; // Use the PORT from environment variable or default to 5004
+const PORT = process.env.PORT || 5001; // Use the PORT from environment variable
 app.listen(PORT, () => {
   console.log(`Backend server is running on port ${PORT}!`);
 });
